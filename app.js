@@ -12,7 +12,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 
 if(process.env.TESTING) {
-  var MONGOURL = 'mongodb://localhost/testing';
+  var MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/testing';
 } else {
   var MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/photo-album';
   mongoose.connect(MONGOURL, err => {
