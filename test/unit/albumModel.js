@@ -9,13 +9,13 @@ var MONGOURL = 'mongodb://localhost/testing';
 
 var testAlbumId = null;
 
-before(function(cb) {
-  mongoose.connect(MONGOURL, cb);
-})
-
-after(function(cb) {
-  mongoose.connection.close(cb);
-})
+// before(function(cb) {
+//   mongoose.connect(MONGOURL, cb);
+// })
+//
+// after(function(cb) {
+//   mongoose.connection.close(cb);
+// })
 
 beforeEach(function(cb) {
   Album.remove({}, (err) => {

@@ -9,15 +9,15 @@ var MONGOURL = 'mongodb://localhost/testing';
 
 var testImgId = null;
 
-before(function(cb) {
-  mongoose.connection.close(function() {
-    mongoose.connect(MONGOURL, cb);
-  });
-});
-
-after(function(cb) {
-  mongoose.connection.close(cb);
-});
+// before(function(cb) {
+//   mongoose.connection.close(function() {
+//     mongoose.connect(MONGOURL, cb);
+//   });
+// });
+//
+// after(function(cb) {
+//   mongoose.connection.close(cb);
+// });
 
 beforeEach(function(cb) {
   Img.remove({}, (err) => {
