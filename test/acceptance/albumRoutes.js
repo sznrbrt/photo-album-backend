@@ -15,7 +15,8 @@ beforeEach(function(cb) {
       images: ['573d13b2e3a96679151515ca']
     });
     album.save((err, dbAlbum) => {
-      testAlbumId = dbAlbum._id;
+      if(err) console.log(err);
+      testAlbumId = album._id;
       cb()
     })
   })
@@ -73,6 +74,7 @@ describe('/api/albums', () => {
   //     supertest(app)
   //       .put(`/api/albums/${testAlbumId}/addToAlbum/573d13b2e3c94479151515ca`)
   //       .end((err, res) => {
+  //         console.log(err);
   //         expect(err).to.not.exist;
   //         expect(res.statusCode).to.equal(200);
   //         expect(res.body).to.equal('Image added to the album!');

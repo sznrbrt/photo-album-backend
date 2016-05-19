@@ -5,7 +5,7 @@ var moment = require('moment');
 
 var imgSchema = new mongoose.Schema({
   imageUrl: { type: String, required: true},
-  createdAt: { type: String, required: true},
+  createdAt: { type: String },
   title: { type: String }
 });
 

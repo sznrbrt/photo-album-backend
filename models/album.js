@@ -31,7 +31,6 @@ albumSchema.statics.deleteOneById = function(albumId, cb){
 
 albumSchema.statics.addImgToAlbum = function(albumId, imgId, cb) {
   Album.findById(albumId, (err, album) => {
-    console.log('album' , album);
     album["images"].push(imgId);
     album.save((err, album) => {
       cb(err)
